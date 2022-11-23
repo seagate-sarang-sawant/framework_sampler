@@ -1,8 +1,8 @@
 import logging
 import os
 import sys
-
 from commons import params
+
 """Custom log level which is more verbose than DEBUG"""
 TRACE: int = 5
 
@@ -58,5 +58,5 @@ def initialize_loghandler(log, level=logging.DEBUG) -> None:
         os.makedirs(dir_path, exist_ok=True)
     name = os.path.splitext(os.path.basename(__file__))[0]
     name = os.path.join(dir_path, name + '.log')
-    cortxlogging.set_log_handlers(log, name, mode='w')
+    set_log_handlers(log, name, mode='w')
 

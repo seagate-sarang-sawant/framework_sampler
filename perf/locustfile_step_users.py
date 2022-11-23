@@ -3,19 +3,20 @@
 """
 Locust tasks set creating, updating and deleting authors
 """
-import glob
 import os
-import math
+import configparser
 import logging
 from locust import LoadTestShape
 from locust import events
 from locust import HttpUser
 from locust import task, constant
 from perf import locust_utils
-from perf import LOCUST_CFG
+from commons import log
 
 UTILS_OBJ = locust_utils.LocustUtils()
 LOGGER = logging.getLogger(__name__)
+log.initialize_loghandler(LOGGER, logging.DEBUG)
+LOCUST_CFG = configparser.ConfigParser()
 
 
 class LocustUser(HttpUser):
@@ -63,6 +64,7 @@ class StepLoadShape(LoadTestShape):
     """
     import pdb
     pdb.set_trace()
+    LOCUST_CFG.read('locust_config.ini')
     step_time = int(os.getenv('STEP_TIME', LOCUST_CFG['DEFAULT']['STEP_TIME']))
     step_load = int(os.getenv('STEP_LOAD', LOCUST_CFG['DEFAULT']['STEP_LOAD']))
     spawn_rate = int(

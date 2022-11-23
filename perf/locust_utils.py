@@ -8,6 +8,7 @@ import json
 import random
 import string
 import hashlib
+import pytest
 from locust import events
 from commons.utils import system_utils
 from perf import LOCUST_CFG
@@ -26,25 +27,26 @@ class LocustUtils:
         self._config = dict()
         self._config["EP_FQDN"] = 'https://fakerestapi.azurewebsites.net'
         self.client = RestClient(self._config)
-
+        self.headers = {'Content-type': 'application/json',
+                        'Accept': 'application/json'}
 
     @staticmethod
     def remove_author(name):
         """Delete checksum from local DB"""
-        global OBJECT_CACHE
-        OBJECT_CACHE.delete(name)
+        global AUTHOR_CACHE
+        AUTHOR_CACHE.delete(name)
 
     @staticmethod
     def store_author(name , author):
         """Store checksum in local DB"""
-        global OBJECT_CACHE
-        OBJECT_CACHE.store(name, author)
+        global AUTHOR_CACHE
+        AUTHOR_CACHE.store(name, author)
 
     @staticmethod
     def pop_one_random():
         """Pop one random object entry from local DB"""
-        global OBJECT_CACHE
-        name, object = OBJECT_CACHE.pop_one()
+        global AUTHOR_CACHE
+        name, object = AUTHOR_CACHE.pop_one()
         if not name:
             return False, False
         return name, object
@@ -75,7 +77,6 @@ class LocustUtils:
         id = random.randint(1, 1024 * 1024 * 1024)
         idbook = random.randint(1, 1024 * 1024)
         firstname = ''.join(random.choice(string.ascii_lowercase) for i in range(10))
-        checksum = hashlib.md5(firstname)
         lastname = ''.join(random.choice(string.ascii_lowercase) for i in range(5))
         author_data = dict(id=id, idBook=idbook, firstName=firstname,
                            lastName=lastname)
@@ -93,14 +94,9 @@ class LocustUtils:
                                         response_time=self.total_time(start_time),
                                         response_length=1024)
             self.store_author(firstname, author_data)
+            return json.loads(resp.text)
 
-
-
-        return json.loads(resp.text)
-
-    def update_author(self):
-        names = AUTHOR_CACHE.get_keys()
-        name = names[random.randint(0, len(names) - 1)]
+    def update_author(self, name):
         object = AUTHOR_CACHE.lookup(name)
         lastname = ''.join(random.choice(string.ascii_lowercase) for i in range(5))
         author_data = dict(lastName=lastname)
@@ -111,60 +107,67 @@ class LocustUtils:
             resp = self.client.rest_call("put", endpoint=endpoint, data=object,
                                          headers=self.headers)
         except (BaseException) as error:
-            LOGGER.error("create author %s failed: %s", object['firstName'], error)
-            events.request_failure.fire(request_type="post", name="update_author",
+            LOGGER.error("update author %s failed: %s", object['firstName'], error)
+            events.request_failure.fire(request_type="put", name="update_author",
                                         response_time=self.total_time(start_time),
                                         response_length=1024, exception=error)
         else:
-            events.request_success.fire(request_type="post", name="update_author",
+            events.request_success.fire(request_type="put", name="update_author",
                                         response_time=self.total_time(start_time),
                                         response_length=1024)
             self.store_author(name, object)
+            return json.loads(resp.text)
 
-    def get_author(self):
+    def get_author(self, name):
         """
         Get user by the updated username
         :return:
         """
-        names = AUTHOR_CACHE.get_keys()
-        name = names[random.randint(0, len(names) - 1)]
         object = AUTHOR_CACHE.lookup(name)
         endpoint = self._config["EP_FQDN"] + f"/api/v1/Authors/{object['id']}"
         start_time = time.time()
         try:
-            resp = self.restapi.rest_call("get", endpoint=endpoint,
+            resp = self.client.rest_call("get", endpoint=endpoint,
                                           headers=self.headers)
         except (BaseException) as error:
-            LOGGER.error("create author %s failed: %s", object['firstName'], error)
-            events.request_failure.fire(request_type="post", name="get_author",
+            LOGGER.error("get author %s failed: %s", object['firstName'], error)
+            events.request_failure.fire(request_type="get", name="get_author",
                                         response_time=self.total_time(start_time),
                                         response_length=1024, exception=error)
         else:
-            events.request_success.fire(request_type="post", name="get_author",
+            events.request_success.fire(request_type="get", name="get_author",
                                         response_time=self.total_time(start_time),
                                         response_length=1024)
+            return json.loads(resp.text)
 
-    def delete_author(self):
+    def delete_author(self, name):
         """
         Get user by the updated username
         :return:
         """
-        names = AUTHOR_CACHE.get_keys()
-        name = names[random.randint(0, len(names) - 1)]
         object = AUTHOR_CACHE.lookup(name)
         endpoint = self._config["EP_FQDN"] + f"/api/v1/Authors/{object['id']}"
         start_time = time.time()
         try:
-            resp = self.restapi.rest_call("delete", endpoint=endpoint,
+            resp = self.client.rest_call("delete", endpoint=endpoint,
                                           headers=self.headers)
         except (BaseException) as error:
-            LOGGER.error("create author %s failed: %s", object['firstName'], error)
-            events.request_failure.fire(request_type="post", name="delete_author",
+            LOGGER.error("delete author %s failed: %s", object['firstName'], error)
+            events.request_failure.fire(request_type="delete", name="delete_author",
                                         response_time=self.total_time(start_time),
                                         response_length=1024, exception=error)
         else:
-            events.request_success.fire(request_type="post", name="delete_author",
+            events.request_success.fire(request_type="delete", name="delete_author",
                                         response_time=self.total_time(start_time),
                                         response_length=1024)
             self.remove_author(name)
 
+
+if __name__ == '__main__':
+    lu = LocustUtils()
+    author = lu.create_author()
+    print(author)
+    author = lu.update_author(author['firstName'])
+    print(lu.get_author(author['firstName']))
+    print(lu.delete_author(author['firstName']))
+    print(lu.get_author(author['firstName']))

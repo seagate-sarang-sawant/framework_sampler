@@ -50,7 +50,8 @@ def umount_dir(mnt_dir: str = None) -> tuple:
     return True, "Directory is unmounted"
 
 
-def run_local_cmd(cmd: str = None, flg: bool = False, chk_stderr: bool = False) -> tuple:
+def run_local_cmd(cmd: str = None, env: dict = None,
+                  flg: bool = False, chk_stderr: bool = False) -> tuple:
     """
     Execute any given command on local machine(Windows, Linux)
     :param cmd: command to be executed
@@ -63,7 +64,7 @@ def run_local_cmd(cmd: str = None, flg: bool = False, chk_stderr: bool = False) 
     LOGGER.debug("Command: %s", cmd)
     proc = None
     try:
-        proc = Popen(cmd, shell=True, stdout=PIPE, stderr=PIPE)  # nosec (B603)
+        proc = Popen(cmd, shell=True, env=env, stdout=PIPE, stderr=PIPE)  # nosec (B603)
         output, error = proc.communicate()
         LOGGER.debug("output = %s", str(output))
         LOGGER.debug("error = %s", str(error))
