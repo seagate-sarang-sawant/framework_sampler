@@ -1,0 +1,92 @@
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [conftest.py: 105]: Skipping placeholder to reset logging level
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [conftest.py: 105]: Skipping placeholder to reset logging level
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [conftest.py: 105]: Skipping placeholder to reset logging level
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [conftest.py: 105]: Skipping placeholder to reset logging level
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [conftest.py: 105]: Skipping placeholder to reset logging level
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [conftest.py: 105]: Skipping placeholder to reset logging level
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [conftest.py: 105]: Skipping placeholder to reset logging level
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [conftest.py: 105]: Skipping placeholder to reset logging level
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [conftest.py: 105]: Skipping placeholder to reset logging level
+[2022-11-23 08:20:28] [MainThread] [INFO  ] [petstore.py: 16]: STARTED: Setup test operations.
+[2022-11-23 08:20:28] [MainThread] [INFO  ] [petstore.py: 20]: ENDED: Setup test suite operations.
+[2022-11-23 08:20:28] [MainThread] [WARNING] [conftest.py: 171]: Exception 'Function' object has no attribute 'call_duration' occurred
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [rest_client.py: 54]: Request URL : https://petstore.swagger.io/v2
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [rest_client.py: 55]: Request type : POST
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [rest_client.py: 56]: Request Header : {'Content-type': 'application/json', 'Accept': 'application/json'}
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [rest_client.py: 57]: Request Parameters : None
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [rest_client.py: 58]: json_dict: null
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [rest_client.py: 60]: Data : {"id": 1, "category": {"id": 0, "name": "dog"}, "name": "sdfdoggie1669171828.6276274", "photoUrls": ["string"], "tags": [{"id": 2, "name": "string"}], "status": "available"}
+[2022-11-23 08:20:28] [MainThread] [DEBUG ] [connectionpool.py: 1005]: Starting new HTTPS connection (1): petstore.swagger.io:443
+[2022-11-23 08:20:30] [MainThread] [DEBUG ] [connectionpool.py: 465]: https://petstore.swagger.io:443 "POST /v2/pet HTTP/1.1" 200 None
+[2022-11-23 08:20:30] [MainThread] [DEBUG ] [rest_client.py: 67]: Response Object: <Response [200]>
+[2022-11-23 08:20:30] [MainThread] [DEBUG ] [rest_client.py: 69]: Response JSON: {'id': 1, 'category': {'id': 0, 'name': 'dog'}, 'name': 'sdfdoggie1669171828.6276274', 'photoUrls': ['string'], 'tags': [{'id': 2, 'name': 'string'}], 'status': 'available'}
+[2022-11-23 08:20:30] [MainThread] [DEBUG ] [test_pets.py: 70]: Created pet  with status available
+[2022-11-23 08:20:30] [MainThread] [DEBUG ] [rest_client.py: 54]: Request URL : https://petstore.swagger.io/v2
+[2022-11-23 08:20:30] [MainThread] [DEBUG ] [rest_client.py: 55]: Request type : PUT
+[2022-11-23 08:20:30] [MainThread] [DEBUG ] [rest_client.py: 56]: Request Header : {'Content-type': 'application/json', 'Accept': 'application/json'}
+[2022-11-23 08:20:30] [MainThread] [DEBUG ] [rest_client.py: 57]: Request Parameters : None
+[2022-11-23 08:20:30] [MainThread] [DEBUG ] [rest_client.py: 58]: json_dict: null
+[2022-11-23 08:20:30] [MainThread] [DEBUG ] [rest_client.py: 60]: Data : {"id": 1, "category": {"id": 0, "name": "dog"}, "name": "sdfdoggie1669171828.6276274", "photoUrls": ["http://123-45678900"], "tags": [{"id": 2, "name": "string"}], "status": "sold"}
+[2022-11-23 08:20:30] [MainThread] [DEBUG ] [connectionpool.py: 1005]: Starting new HTTPS connection (1): petstore.swagger.io:443
+[2022-11-23 08:20:31] [MainThread] [DEBUG ] [connectionpool.py: 465]: https://petstore.swagger.io:443 "PUT /v2/pet HTTP/1.1" 200 None
+[2022-11-23 08:20:31] [MainThread] [DEBUG ] [rest_client.py: 67]: Response Object: <Response [200]>
+[2022-11-23 08:20:31] [MainThread] [DEBUG ] [rest_client.py: 69]: Response JSON: {'id': 1, 'category': {'id': 0, 'name': 'dog'}, 'name': 'sdfdoggie1669171828.6276274', 'photoUrls': ['http://123-45678900'], 'tags': [{'id': 2, 'name': 'string'}], 'status': 'sold'}
+[2022-11-23 08:20:31] [MainThread] [INFO  ] [test_pets.py: 75]: Updated pet {'id': 1, 'category': {'id': 0, 'name': 'dog'}, 'name': 'sdfdoggie1669171828.6276274', 'photoUrls': ['http://123-45678900'], 'tags': [{'id': 2, 'name': 'string'}], 'status': 'sold'} with status sold
+[2022-11-23 08:20:31] [MainThread] [DEBUG ] [test_pets.py: 77]: Updated pet sdfdoggie1669171828.6276274 successfully
+[2022-11-23 08:20:31] [MainThread] [DEBUG ] [rest_client.py: 54]: Request URL : https://petstore.swagger.io/v2
+[2022-11-23 08:20:31] [MainThread] [DEBUG ] [rest_client.py: 55]: Request type : GET
+[2022-11-23 08:20:31] [MainThread] [DEBUG ] [rest_client.py: 56]: Request Header : {'Content-type': 'application/json', 'Accept': 'application/json'}
+[2022-11-23 08:20:31] [MainThread] [DEBUG ] [rest_client.py: 57]: Request Parameters : None
+[2022-11-23 08:20:31] [MainThread] [DEBUG ] [rest_client.py: 58]: json_dict: null
+[2022-11-23 08:20:31] [MainThread] [DEBUG ] [rest_client.py: 60]: Data : null
+[2022-11-23 08:20:31] [MainThread] [DEBUG ] [connectionpool.py: 1005]: Starting new HTTPS connection (1): petstore.swagger.io:443
+[2022-11-23 08:20:32] [MainThread] [DEBUG ] [connectionpool.py: 465]: https://petstore.swagger.io:443 "GET /v2/pet/findByStatus?status=sold HTTP/1.1" 200 None
+[2022-11-23 08:20:32] [MainThread] [DEBUG ] [rest_client.py: 67]: Response Object: <Response [200]>
+[2022-11-23 08:20:32] [MainThread] [DEBUG ] [rest_client.py: 69]: Response JSON: [{'id': 9223372016900011626, 'category': {'id': 48345351, 'name': 'dolore quis'}, 'name': 'doggie', 'photoUrls': ['deseru', 'nisi aute do incididunt'], 'tags': [{'id': 72677302, 'name': 'in incididunt dolore occaecat'}, {'id': -38449077, 'name': 'adipisicing'}], 'status': 'sold'}, {'id': 9, 'category': {'id': 0, 'name': 'cats'}, 'photoUrls': ['string'], 'tags': [{'id': 0, 'name': 'string'}], 'status': 'sold'}, {'id': 2, 'category': {'id': 0, 'name': 'dog'}, 'name': 'ghimurphy1669171766.0804515', 'photoUrls': ['http://123-45678900'], 'tags': [{'id': 3, 'name': 'string'}], 'status': 'sold'}, {'id': 1, 'category': {'id': 0, 'name': 'dog'}, 'name': 'sdfdoggie1669171828.6276274', 'photoUrls': ['http://123-45678900'], 'tags': [{'id': 2, 'name': 'string'}], 'status': 'sold'}]
+[2022-11-23 08:25:36] [MainThread] [INFO  ] [test_pets.py: 85]: Got pet with status sold
+[2022-11-23 08:25:44] [MainThread] [INFO  ] [conftest.py: 169]: Setting attribute call_duration
+[2022-11-23 08:25:44] [MainThread] [INFO  ] [conftest.py: 169]: Setting attribute call_duration
+[2022-11-23 08:25:44] [MainThread] [WARNING] [conftest.py: 171]: Exception 'Function' object has no attribute 'call_duration' occurred
+[2022-11-23 08:25:44] [MainThread] [DEBUG ] [rest_client.py: 54]: Request URL : https://petstore.swagger.io/v2
+[2022-11-23 08:25:44] [MainThread] [DEBUG ] [rest_client.py: 55]: Request type : POST
+[2022-11-23 08:25:44] [MainThread] [DEBUG ] [rest_client.py: 56]: Request Header : {'Content-type': 'application/json', 'Accept': 'application/json'}
+[2022-11-23 08:25:44] [MainThread] [DEBUG ] [rest_client.py: 57]: Request Parameters : None
+[2022-11-23 08:25:44] [MainThread] [DEBUG ] [rest_client.py: 58]: json_dict: null
+[2022-11-23 08:25:44] [MainThread] [DEBUG ] [rest_client.py: 60]: Data : {"id": 2, "category": {"id": 0, "name": "dog"}, "name": "ghimurphy1669172144.55783", "photoUrls": ["string"], "tags": [{"id": 3, "name": "string"}], "status": "available"}
+[2022-11-23 08:25:44] [MainThread] [DEBUG ] [connectionpool.py: 1005]: Starting new HTTPS connection (1): petstore.swagger.io:443
+[2022-11-23 08:25:45] [MainThread] [DEBUG ] [connectionpool.py: 465]: https://petstore.swagger.io:443 "POST /v2/pet HTTP/1.1" 200 None
+[2022-11-23 08:25:45] [MainThread] [DEBUG ] [rest_client.py: 67]: Response Object: <Response [200]>
+[2022-11-23 08:25:45] [MainThread] [DEBUG ] [rest_client.py: 69]: Response JSON: {'id': 2, 'category': {'id': 0, 'name': 'dog'}, 'name': 'ghimurphy1669172144.55783', 'photoUrls': ['string'], 'tags': [{'id': 3, 'name': 'string'}], 'status': 'available'}
+[2022-11-23 08:25:45] [MainThread] [DEBUG ] [test_pets.py: 70]: Created pet  with status available
+[2022-11-23 08:25:45] [MainThread] [DEBUG ] [rest_client.py: 54]: Request URL : https://petstore.swagger.io/v2
+[2022-11-23 08:25:45] [MainThread] [DEBUG ] [rest_client.py: 55]: Request type : PUT
+[2022-11-23 08:25:45] [MainThread] [DEBUG ] [rest_client.py: 56]: Request Header : {'Content-type': 'application/json', 'Accept': 'application/json'}
+[2022-11-23 08:25:45] [MainThread] [DEBUG ] [rest_client.py: 57]: Request Parameters : None
+[2022-11-23 08:25:45] [MainThread] [DEBUG ] [rest_client.py: 58]: json_dict: null
+[2022-11-23 08:25:45] [MainThread] [DEBUG ] [rest_client.py: 60]: Data : {"id": 2, "category": {"id": 0, "name": "dog"}, "name": "ghimurphy1669172144.55783", "photoUrls": ["http://123-45678900"], "tags": [{"id": 3, "name": "string"}], "status": "sold"}
+[2022-11-23 08:25:45] [MainThread] [DEBUG ] [connectionpool.py: 1005]: Starting new HTTPS connection (1): petstore.swagger.io:443
+[2022-11-23 08:25:47] [MainThread] [DEBUG ] [connectionpool.py: 465]: https://petstore.swagger.io:443 "PUT /v2/pet HTTP/1.1" 200 None
+[2022-11-23 08:25:47] [MainThread] [DEBUG ] [rest_client.py: 67]: Response Object: <Response [200]>
+[2022-11-23 08:25:47] [MainThread] [DEBUG ] [rest_client.py: 69]: Response JSON: {'id': 2, 'category': {'id': 0, 'name': 'dog'}, 'name': 'ghimurphy1669172144.55783', 'photoUrls': ['http://123-45678900'], 'tags': [{'id': 3, 'name': 'string'}], 'status': 'sold'}
+[2022-11-23 08:25:47] [MainThread] [INFO  ] [test_pets.py: 75]: Updated pet {'id': 2, 'category': {'id': 0, 'name': 'dog'}, 'name': 'ghimurphy1669172144.55783', 'photoUrls': ['http://123-45678900'], 'tags': [{'id': 3, 'name': 'string'}], 'status': 'sold'} with status sold
+[2022-11-23 08:25:47] [MainThread] [DEBUG ] [test_pets.py: 77]: Updated pet ghimurphy1669172144.55783 successfully
+[2022-11-23 08:25:47] [MainThread] [DEBUG ] [rest_client.py: 54]: Request URL : https://petstore.swagger.io/v2
+[2022-11-23 08:25:47] [MainThread] [DEBUG ] [rest_client.py: 55]: Request type : GET
+[2022-11-23 08:25:47] [MainThread] [DEBUG ] [rest_client.py: 56]: Request Header : {'Content-type': 'application/json', 'Accept': 'application/json'}
+[2022-11-23 08:25:47] [MainThread] [DEBUG ] [rest_client.py: 57]: Request Parameters : None
+[2022-11-23 08:25:47] [MainThread] [DEBUG ] [rest_client.py: 58]: json_dict: null
+[2022-11-23 08:25:47] [MainThread] [DEBUG ] [rest_client.py: 60]: Data : null
+[2022-11-23 08:25:47] [MainThread] [DEBUG ] [connectionpool.py: 1005]: Starting new HTTPS connection (1): petstore.swagger.io:443
+[2022-11-23 08:25:48] [MainThread] [DEBUG ] [connectionpool.py: 465]: https://petstore.swagger.io:443 "GET /v2/pet/findByStatus?status=sold HTTP/1.1" 200 None
+[2022-11-23 08:25:48] [MainThread] [DEBUG ] [rest_client.py: 67]: Response Object: <Response [200]>
+[2022-11-23 08:25:48] [MainThread] [DEBUG ] [rest_client.py: 69]: Response JSON: [{'id': 9223372016900011626, 'category': {'id': 48345351, 'name': 'dolore quis'}, 'name': 'doggie', 'photoUrls': ['deseru', 'nisi aute do incididunt'], 'tags': [{'id': 72677302, 'name': 'in incididunt dolore occaecat'}, {'id': -38449077, 'name': 'adipisicing'}], 'status': 'sold'}, {'id': 9, 'category': {'id': 0, 'name': 'cats'}, 'photoUrls': ['string'], 'tags': [{'id': 0, 'name': 'string'}], 'status': 'sold'}, {'id': 2, 'category': {'id': 0, 'name': 'dog'}, 'name': 'ghimurphy1669172144.55783', 'photoUrls': ['http://123-45678900'], 'tags': [{'id': 3, 'name': 'string'}], 'status': 'sold'}]
+[2022-11-23 08:25:51] [MainThread] [INFO  ] [test_pets.py: 82]: Got pet with status sold
+[2022-11-23 08:25:51] [MainThread] [INFO  ] [conftest.py: 169]: Setting attribute call_duration
+[2022-11-23 08:25:51] [MainThread] [INFO  ] [petstore.py: 22]: STARTED: Test suite Teardown operations
+[2022-11-23 08:25:51] [MainThread] [INFO  ] [petstore.py: 24]: ENDED: Test suite Teardown operations
+[2022-11-23 08:25:51] [MainThread] [INFO  ] [conftest.py: 169]: Setting attribute call_duration
+[2022-11-23 08:25:51] [MainThread] [ERROR ] [conftest.py: 79]: module 'commons.params' has no attribute 'MOUNT_DIR'
+Traceback (most recent call last):
+  File "C:\Users\755344\codebase\framework_sampler\conftest.py", line 75, in pytest_sessionfinish
+    resp = system_utils.umount_dir(mnt_dir=params.MOUNT_DIR)
+AttributeError: module 'commons.params' has no attribute 'MOUNT_DIR'

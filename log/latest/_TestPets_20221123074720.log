@@ -1,0 +1,24 @@
+[2022-11-23 07:47:14] [MainThread] [INFO  ] [petstore.py: 16]: STARTED: Setup test operations.
+[2022-11-23 07:47:14] [MainThread] [INFO  ] [petstore.py: 20]: ENDED: Setup test suite operations.
+[2022-11-23 07:47:18] [MainThread] [DEBUG ] [rest_client.py: 54]: Request URL : https://petstore.swagger.io/v2
+[2022-11-23 07:47:18] [MainThread] [DEBUG ] [rest_client.py: 55]: Request type : POST
+[2022-11-23 07:47:18] [MainThread] [DEBUG ] [rest_client.py: 56]: Request Header : {'Content-type': 'application/json', 'Accept': 'application/json'}
+[2022-11-23 07:47:18] [MainThread] [DEBUG ] [rest_client.py: 57]: Request Parameters : None
+[2022-11-23 07:47:18] [MainThread] [DEBUG ] [rest_client.py: 58]: json_dict: null
+[2022-11-23 07:47:18] [MainThread] [DEBUG ] [rest_client.py: 60]: Data : {"id": 1, "category": {"id": 0, "name": "dog"}, "name": "sdfdoggie1669169838.286223", "photoUrls": ["string"], "tags": [{"id": 2, "name": "string"}], "status": "available"}
+[2022-11-23 07:47:18] [MainThread] [DEBUG ] [connectionpool.py: 1005]: Starting new HTTPS connection (1): petstore.swagger.io:443
+[2022-11-23 07:47:19] [MainThread] [DEBUG ] [connectionpool.py: 465]: https://petstore.swagger.io:443 "POST /v2/pet HTTP/1.1" 200 None
+[2022-11-23 07:47:19] [MainThread] [DEBUG ] [rest_client.py: 67]: Response Object: <Response [200]>
+[2022-11-23 07:47:19] [MainThread] [DEBUG ] [rest_client.py: 69]: Response JSON: {'id': 1, 'category': {'id': 0, 'name': 'dog'}, 'name': 'sdfdoggie1669169838.286223', 'photoUrls': ['string'], 'tags': [{'id': 2, 'name': 'string'}], 'status': 'available'}
+[2022-11-23 07:47:19] [MainThread] [DEBUG ] [test_pets.py: 66]: Created pet  with status available
+[2022-11-23 07:47:19] [MainThread] [DEBUG ] [rest_client.py: 54]: Request URL : https://petstore.swagger.io/v2
+[2022-11-23 07:47:19] [MainThread] [DEBUG ] [rest_client.py: 55]: Request type : PUT
+[2022-11-23 07:47:19] [MainThread] [DEBUG ] [rest_client.py: 56]: Request Header : {'Content-type': 'application/json', 'Accept': 'application/json'}
+[2022-11-23 07:47:19] [MainThread] [DEBUG ] [rest_client.py: 57]: Request Parameters : None
+[2022-11-23 07:47:19] [MainThread] [DEBUG ] [rest_client.py: 58]: json_dict: null
+[2022-11-23 07:47:19] [MainThread] [DEBUG ] [rest_client.py: 60]: Data : {"id": 1, "category": {"id": 0, "name": "dog"}, "name": "sdfdoggie1669169838.286223", "photoUrls": ["http://123-45678900"], "tags": [{"id": 2, "name": "string"}], "status": "sold"}
+[2022-11-23 07:47:19] [MainThread] [DEBUG ] [connectionpool.py: 1005]: Starting new HTTPS connection (1): petstore.swagger.io:443
+[2022-11-23 07:47:20] [MainThread] [DEBUG ] [connectionpool.py: 465]: https://petstore.swagger.io:443 "PUT /v2/pet HTTP/1.1" 200 None
+[2022-11-23 07:47:20] [MainThread] [DEBUG ] [rest_client.py: 67]: Response Object: <Response [200]>
+[2022-11-23 07:47:20] [MainThread] [DEBUG ] [rest_client.py: 69]: Response JSON: {'id': 1, 'category': {'id': 0, 'name': 'dog'}, 'name': 'sdfdoggie1669169838.286223', 'photoUrls': ['http://123-45678900'], 'tags': [{'id': 2, 'name': 'string'}], 'status': 'sold'}
+[2022-11-23 07:47:20] [MainThread] [DEBUG ] [test_pets.py: 66]: Updated pet sdfdoggie1669169838.286223 successfully
